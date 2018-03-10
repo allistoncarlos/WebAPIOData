@@ -1,0 +1,349 @@
+{
+	"info": {
+		"name": "OData Sample",
+		"_postman_id": "648578e2-1c4d-4074-b65a-8c33f45add71",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:53760/odata/Games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53760",
+					"path": [
+						"odata",
+						"Games"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:53760/odata/Games/$count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53760",
+					"path": [
+						"odata",
+						"Games",
+						"$count"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:53760/odata/Games(2)",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53760",
+					"path": [
+						"odata",
+						"Games(2)"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "All Select",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:53760/odata/Games?$select=Name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53760",
+					"path": [
+						"odata",
+						"Games"
+					],
+					"query": [
+						{
+							"key": "$select",
+							"value": "Name",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Select Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:53760/odata/Games?$filter=contains(Name, 'a')&$select=Name&$orderby=Platform/Name asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53760",
+					"path": [
+						"odata",
+						"Games"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "contains(Name, 'a')",
+							"equals": true
+						},
+						{
+							"key": "$select",
+							"value": "Name",
+							"equals": true
+						},
+						{
+							"key": "$orderby",
+							"value": "Platform/Name asc",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Equal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:53760/odata/Games?$filter=Name eq 'Persona 4 Golden'",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53760",
+					"path": [
+						"odata",
+						"Games"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "Name eq 'Persona 4 Golden'",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Contains",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:53760/odata/Games?$filter=contains(Name, 'Need')",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53760",
+					"path": [
+						"odata",
+						"Games"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "contains(Name, 'Need')",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Enum",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:53760/odata/Games?$filter=Genre eq WebAPIOData.Genre'FPS'",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53760",
+					"path": [
+						"odata",
+						"Games"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "Genre eq WebAPIOData.Genre'FPS'",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Name\": \"Gran Turismo Sport\",\n    \"Genre\": \"Sport\",\n    \"Year\": 2017,\n    \"Platform\": {\n        \"Id\": 1\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:53760/odata/Games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53760",
+					"path": [
+						"odata",
+						"Games"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n\t{\"op\" : \"replace\", \"path\" : \"Name\", \"value\" : \"Persona 4: Golden\"},\r\n\t{\"op\" : \"replace\", \"path\" : \"Year\", \"value\" : \"2013\"},\r\n]"
+				},
+				"url": {
+					"raw": "http://localhost:53760/odata/Games(2)",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53760",
+					"path": [
+						"odata",
+						"Games(2)"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Name\": \"Persona 4: Golden\",\n    \"Genre\": \"RPG\",\n    \"Year\": 2013,\n    \"Platform\": {\n        \"Id\": 3,\n        \"Name\": \"PSVita\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:53760/odata/Games(2)",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53760",
+					"path": [
+						"odata",
+						"Games(2)"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:53760/odata/Games(5)",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53760",
+					"path": [
+						"odata",
+						"Games(5)"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -58,7 +58,7 @@ As outras definições (Filter, OrderBy, Count e Select) são informadas para que a
 [GamesController.cs]()
 ```C#
 [EnableQuery(PageSize = 20)]
-[Route("odata/[controller]")]
+[Route("api/[controller]")]
 public class GamesController : Controller
 {
     // GET odata/Games

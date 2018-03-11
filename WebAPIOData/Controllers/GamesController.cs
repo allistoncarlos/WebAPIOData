@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebAPIOData.Controllers
 {
     [EnableQuery(PageSize = 20)]
-    [Route("odata/[controller]")]
+    [Route("api/[controller]")]
     public class GamesController : Controller
     {
         private static readonly List<Platform> Platforms = new List<Platform>

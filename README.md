@@ -55,7 +55,7 @@ No método Configure, é chamada a Action ConfigureODataRoutes, onde definimos a r
 
 As outras definições (Filter, OrderBy, Count e Select) são informadas para que as respectivas operações sejam suportadas.
 
-[GamesController.cs]()
+[GamesController.cs](https://github.com/allistoncarlos/WebAPIOData/blob/master/WebAPIOData/Controllers/GamesController.cs)
 ```C#
 [EnableQuery(PageSize = 20)]
 [Route("api/[controller]")]
